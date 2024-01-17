@@ -1,0 +1,60 @@
+----backend----
+create backend folder and cd backend
+create server.js
+create package.json by typing npm init
+install dependencies
+npm install express, npm install nodemon, npm install mongoose, npm install dotenv
+create dotenv to store port and mongo uri
+server.js start app and use '/api/workout' route to workout.js in routes folder
+provide routes with functionality provided in controllers folder
+so create controllers folder and create workoutControllers.js in it
+add functionalities in controllers and export them. 
+in routes import these controllers functions and use them in routes
+inorder to use database in controller first create a schema and model for data in models folder in workoutModels.js
+in model create schema and export the model using mongoose
+
+----frontend----
+..cd   (to come back from backend folder)
+install react by entering-> npm create-react-app frontend
+//currently cra is getting depricated so use vite
+//npm create vite@latest projectName -- --template react
+//delete unnecesary folder like test, logo and its imports...
+in app.js to add routes first install react-router-dom by -> npm install react-router-dom
+using routes link to different pages in pages folder
+we can create components to make reusable code and import it in app and link it
+when json is parsed with jsonfunction it becomes array
+in home page we are going to fetch all workouts from api and also add create workout from
+so first we are fetching data from /api/workouts and using proxy in package.json because we are using 3000 port as frontend and 4000 as backend but in development we need to change it
+after fetching workouts we are going to use map function to iterate through each workout and we send this as prop to workoutDetails component to render  details of workout
+and below that add workout form to create a workout using component
+store the data using useState and effect asynchronulsy and if response is ok then we convert the object to json using stringify and post it
+//context provider
+create WorkoutContext.js in context folder 
+
+
+JSON Web Token
+It is used to communicate between front end and backend
+If logged in then send json web token to browser and able to show different templates or components or else it redirects to login page
+it contains 3 components
+  ->header contain algo for jwt
+  ->payload contain user non sensitive data
+  ->signature used to verify token by server
+to install it we are using pip install jsonwebtoken
+
+in signup function in controllers we are taking data and validating and adding data in db. in models we are doing these. and also creating jsonwebtoken
+in login we are taking data and matching, if matched then return something
+
+now we have to do frontend part to take data
+
+Context and hook
+Context is a way to share state between components(we can do it with props but when we share large data then it becomes messy with props)
+hook tap innerworkings of react in functional components
+
+->app
+->contextprovider
+->context.provider (we can access state to all components that are wrapped under context provider)
+->components  
+
+---useReducer returns a state and a dispatch function. The dispatch function is used to trigger state transitions by dispatching actions. Actions are objects that typically have a type property indicating the type of action, and optionally a payload with additional data.---
+
+remember that when we are using fetch request and doesnot contain pase url then we have added proxy which is localhost: 4000
